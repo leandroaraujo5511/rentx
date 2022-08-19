@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StatusBar, useWindowDimensions } from "react-native";
 
@@ -8,6 +9,12 @@ import { Container, Content, Footer, Message, Title } from "./styles";
 
 export function SchedulingComplete() {
   const { width } = useWindowDimensions();
+
+  const navigation = useNavigation<any>();
+
+  function handleConfirmRental() {
+    navigation.navigate("Home");
+  }
   return (
     <Container>
       <StatusBar
@@ -27,7 +34,7 @@ export function SchedulingComplete() {
         </Message>
       </Content>
       <Footer>
-        <ConfirmButton title="Ok" />
+        <ConfirmButton title="Ok" onPress={handleConfirmRental} />
       </Footer>
     </Container>
   );

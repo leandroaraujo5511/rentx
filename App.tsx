@@ -10,8 +10,9 @@ import {
 } from "@expo-google-fonts/inter";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { ThemeProvider } from "styled-components";
-import { SchedulingComplete } from "./src/screens/SchedulingComplete";
+import { Routes } from "./src/routes";
 import theme from "./src/styles/theme";
 
 export default function App() {
@@ -39,8 +40,10 @@ export default function App() {
   }
 
   return !loading ? (
-    <ThemeProvider theme={theme}>
-      <SchedulingComplete />
-    </ThemeProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </GestureHandlerRootView>
   ) : null;
 }
