@@ -5,7 +5,7 @@ import { FlatList } from "react-native";
 import { useTheme } from "styled-components";
 import { BackButton } from "../../components/BackButton";
 import { Car } from "../../components/Car";
-import { Load } from "../../components/Load";
+import { LoadAnimated } from "../../components/LoadAnimated";
 import { CarDTO } from "../../dtos/CarDTO";
 import { api } from "../../services/api";
 import {
@@ -63,7 +63,7 @@ export function MyCars() {
         <SubTitle>Conforto, segurança e praticidade.</SubTitle>
       </Header>
       {loading ? (
-        <Load />
+        <LoadAnimated />
       ) : (
         <Content>
           <Appointments>
